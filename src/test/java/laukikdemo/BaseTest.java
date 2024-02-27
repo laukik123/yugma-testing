@@ -18,7 +18,7 @@ public class BaseTest {
 	public void ConfigureAppium() throws MalformedURLException {
 //		service = new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\Laukik\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
 //				.withIPAddress("127.0.0.1").usingPort(4723).build();
-		
+//		
 //		service.start();
 		UiAutomator2Options options = new UiAutomator2Options();
 		

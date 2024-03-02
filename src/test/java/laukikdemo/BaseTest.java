@@ -22,8 +22,8 @@ public class BaseTest {
 //		service.start();
 		UiAutomator2Options options = new UiAutomator2Options();
 		
-		options.setDeviceName("SM_G781B");
-		options.setApp("D:\\FCRIT\\vMentor\\YugmaApp\\android\\app\\build\\outputs\\apk\\release\\app-release.apk");
+		options.setDeviceName("vivo 1917");
+		options.setApp("C:\\Users\\Sahil Raj\\Downloads\\app-release.apk");
 				
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

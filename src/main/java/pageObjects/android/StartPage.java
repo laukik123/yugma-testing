@@ -62,10 +62,17 @@ public class StartPage {
 	}
 	
 	public void login() {
+		selectwhileUsingTheAppPermission();
+		selectwhileUsingTheAppPermission();
+		allowButtonClick();
+//		startPage.updateIgnore();
+		continueWithEmail();
 		emailTextbox.sendKeys("laukik@vmentor.ai");
 		passwordTextbox.sendKeys("laukikvmentor123");
 		loginButton.click();
 	}
+	
+	
 	
 	//not using because the test was failing
 	public void confirmLogin() {

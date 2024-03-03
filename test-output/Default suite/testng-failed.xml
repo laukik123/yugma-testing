@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="laukikdemo.CourseTest">
+      <class name="laukikdemo.CommunityTest">
         <methods>
-          <include name="playCourse"/>
-          <include name="showCourses"/>
+          <include name="showPosts"/>
           <include name="ConfigureAppium"/>
+          <include name="kreatePost"/>
         </methods>
-      </class> <!-- laukikdemo.CourseTest -->
+      </class> <!-- laukikdemo.CommunityTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

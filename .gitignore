@@ -17,4 +17,6 @@ buildNumber.properties
 .classpath
 */Constants.java
 .settings
+*/BaseTest.java
+
 test-output

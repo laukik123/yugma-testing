@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Community comment Test(failed)">
+    <groups>
+      <run>
+        <include name="community"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="community.communityComment">
+        <methods>
+          <include name="comment"/>
+          <include name="ConfigureAppium"/>
+        </methods>
+      </class> <!-- community.communityComment -->
+    </classes>
+  </test> <!-- Community comment Test(failed) -->
+  <test thread-count="5" name="Community join group and post Test(failed)">
+    <groups>
+      <run>
+        <include name="community"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="community.communityJoinGroupAndPost">
+        <methods>
+          <include name="ConfigureAppium"/>
+          <include name="joinGroupAndPost"/>
+        </methods>
+      </class> <!-- community.communityJoinGroupAndPost -->
+    </classes>
+  </test> <!-- Community join group and post Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

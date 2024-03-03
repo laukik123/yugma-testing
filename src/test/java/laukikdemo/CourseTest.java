@@ -10,7 +10,7 @@ import pageObjects.android.StartPage;
 
 public class CourseTest extends BaseTest {
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void showCourses() {
 		StartPage startPage = new StartPage(driver);
 		Courses courses = new Courses(driver);
@@ -18,7 +18,7 @@ public class CourseTest extends BaseTest {
 		startPage.selectwhileUsingTheAppPermission();
 		startPage.selectwhileUsingTheAppPermission();
 		startPage.allowButtonClick();
-		startPage.updateIgnore();
+//		startPage.updateIgnore();
 		startPage.continueWithEmail();
 		startPage.login();
 		

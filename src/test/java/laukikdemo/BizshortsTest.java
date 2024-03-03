@@ -30,7 +30,7 @@ public class BizshortsTest extends BaseTest {
 //	}
 	
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void openBizshorts() throws InterruptedException, MalformedURLException {
 		HomeScreen homeScreen= new HomeScreen(driver);	
 		StartPage startPage = new StartPage(driver);

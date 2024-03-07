@@ -18,3 +18,6 @@ buildNumber.properties
 */Constants.java
 .settings
 */BaseTest.java
+/test-output
+*/*.html
+*/*.xml

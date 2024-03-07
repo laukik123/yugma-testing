@@ -97,6 +97,7 @@ public class Community {
 		Thread.sleep(2000);
 //		System.out.println(driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]")).getText());
 		AssertJUnit.assertEquals(comment, driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]")).getText());
+		
 	}
 	
 	public void post() throws InterruptedException {
@@ -112,7 +113,7 @@ public class Community {
 		groupTab.click();
 		Thread.sleep(1000);
 		postTab.click();                                
-		System.out.println(driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]")).getText());
+//		System.out.println(driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]")).getText());
 		AssertJUnit.assertEquals(postText, driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]")).getText());
 		
 		

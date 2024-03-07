@@ -19,45 +19,43 @@ import pageObjects.android.StartPage;
 
 public class BizshortsTest extends BaseTest {
 
-//	@BeforeMethod
-//	public void preSetup() throws IOException, InterruptedException {
-////		Activity activity = new Activity("com.yugma.app", "com.yugma.app.MainActivity");
-////		start the test from homescreen
-////		((JavascriptExecutor)driver).executeScript("mobile: startActivity", ImmutableMap.of("intent", "com.yugma.app/com.yugma.app.MainActivity"));
-//		String adbCommand = String.format("adb shell am start -n %s/%s", "com.yugma.app", "com.yugma.app.MainActivity");
-//		Runtime.getRuntime().exec(adbCommand);
-//		Thread.sleep(3000);
-//	}
-	
-
-	@BeforeMethod(alwaysRun = true)
+	@Test(priority=1)
 	public void openBizshorts() throws InterruptedException, MalformedURLException {
+		System.out.println("Running openBizshorts");
 		HomeScreen homeScreen= new HomeScreen(driver);	
 		StartPage startPage = new StartPage(driver);
-		startPage.selectwhileUsingTheAppPermission();
-		startPage.selectwhileUsingTheAppPermission();
-		startPage.allowButtonClick();
-		startPage.updateIgnore();
-		startPage.continueWithEmail();
 		startPage.login();
 		homeScreen.openBizshorts();
 		Thread.sleep(2000);
 		//assert if the size of array of newscards is greater than 0 that means news are being displayed
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup")).size()>0);
+//		homeScreen.backToHomescreen();
+		Thread.sleep(2000);
+		driver.navigate().back();
 	}
 		
-//		@Test
-//		public void openNews() {
-//			Bizshorts bizshorts=new Bizshorts(driver);
-//			//open bizshorts
-//			bizshorts.openNews();
-//			//news title, description is shown
-//			AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView")).size()>4);
-//		}
-		
-		@Test
-		public void bookmarkTest() {
+		@Test(priority=2)
+		public void openNews() throws InterruptedException {
+			System.out.println("Running openNews");
+			HomeScreen homeScreen= new HomeScreen(driver);	
 			Bizshorts bizshorts=new Bizshorts(driver);
+			//open bizshorts
+			homeScreen.openBizshorts();
+			bizshorts.openNews();
+			//news title, description is shown
+			AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView")).size()>4);
+//			homeScreen.backToHomescreen();
+			Thread.sleep(2000);
+			driver.navigate().back();
+			driver.navigate().back();
+		}
+		
+		@Test(priority=3)
+		public void bookmarkTest() throws InterruptedException {
+			System.out.println("runnning bookmarkTest");
+			HomeScreen homeScreen= new HomeScreen(driver);	
+			Bizshorts bizshorts=new Bizshorts(driver);
+			homeScreen.openBizshorts();
 			bizshorts.bookmark();
 //			String title1= driver.findElement(By.xpath("//android.widget.TextView[@index=1]")).getText();
 //			System.out.println(title1);
@@ -65,7 +63,10 @@ public class BizshortsTest extends BaseTest {
 //			bizshorts.openBookmarked();
 //			System.out.println(driver.findElement(By.xpath("//android.widget.TextView[@text=\"No bookmarked news yet. Bookmark news by clicking on the bookmark\"]")).getText());
 			AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView[@text=\"No bookmarked news yet. Bookmark news by clicking on the bookmark\"]")).size()<1);
-		
+//			homeScreen.backToHomescreen();
+			Thread.sleep(2000);
+			driver.navigate().back();
+			driver.navigate().back();
 		}
 		}
 				

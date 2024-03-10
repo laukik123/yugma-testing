@@ -24,17 +24,17 @@ public class BaseTest {
 		
 		UiAutomator2Options options = new UiAutomator2Options();
 		
-		options.setDeviceName("vivo 1917");
-		options.setApp("C:\\Users\\Sahil Raj\\Downloads\\app-release.apk");
+		options.setDeviceName("SM_G781B");
+		options.setApp("D:\\FCRIT\\appium\\app-release.apk");
 				
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 	}
 	
-//	@AfterClass(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void TearDown() {
 		driver.quit();
-		service.stop();
+//		service.stop();
 	}
 }

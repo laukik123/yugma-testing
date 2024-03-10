@@ -67,7 +67,7 @@ public class AndroidActions extends AppiumUtils{
 				"elementId", ((RemoteWebElement)ele).getId(),
 			 
 			    "direction", direction,
-			    "percent", 0.10
+			    "percent", 0.75
 			));
 		
 		

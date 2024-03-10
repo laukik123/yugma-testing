@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	<groups>
+		<run>
+			<include name="Smoke"/>
+		</run>
+	</groups>
 	<listeners>
 		<listener class-name="testUtils.Listeners"/>
 	</listeners>
@@ -11,18 +16,18 @@
 	    </classes>
 	  </test> 	
 	  
-	  <test thread-count="5" name="Bizshorts Test">
-	    <classes>
-	      <class name="laukikdemo.BizshortsTest"/>
-	    </classes>
-	  </test> 	
-	
 	  <test thread-count="5" name="Community Test">
 	    <classes>
 	      <class name="laukikdemo.CommunityTest"/>
 	    </classes>
 	  </test> 
- 
+	  
+	  <test thread-count="5" name="Bizshorts Test">
+	    <classes>
+	      <class name="laukikdemo.BizshortsTest"/>
+	    </classes>
+	  </test> 	
+ <!-- 
 	  <test thread-count="5" name="Courses Test">
 	    <classes>
 	      <class name="laukikdemo.CourseTest"/>
@@ -52,6 +57,8 @@
 	      <class name="laukikdemo.PlacementPrepTest"/>
 	    </classes>
 	  </test> 
+	  
+	  -->
 </suite> <!-- Suite -->
 
 

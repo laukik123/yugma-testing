@@ -25,8 +25,10 @@ AndroidDriver driver;
 		jobCard.click();
 	}
 	
-	public void jobClickWorking() {
+	public void jobClickWorking() throws InterruptedException {
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ImageView")).size()>0);
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView[@index=1]")).size()>0);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView[@index=19]")).size()>0);
 		

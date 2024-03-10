@@ -77,9 +77,9 @@ public class Community {
 		searchButton.click();
 		searchBar.sendKeys("Placement preparations");
 		joinButton.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("(//android.widget.TextView[@text=\"JOIN\"])")).size()<1);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.navigate().back();
 	}
 	
@@ -114,6 +114,7 @@ public class Community {
 		Thread.sleep(1000);
 		postTab.click();                                
 //		System.out.println(driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]")).getText());
+		Thread.sleep(2000);
 		AssertJUnit.assertEquals(postText, driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]")).getText());
 		
 		

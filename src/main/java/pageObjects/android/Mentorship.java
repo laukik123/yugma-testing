@@ -67,6 +67,7 @@ public class Mentorship {
 		timeSlot.click();
 		bookButton.click();
 		proceedButton.click();
+		Thread.sleep(3000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.webkit.WebView[@content-desc=\"primary_webview\"]")).size()>0);
 	}
 	

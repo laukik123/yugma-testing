@@ -9,22 +9,23 @@ import pageObjects.android.HomeScreen;
 import pageObjects.android.Mentorship;
 import pageObjects.android.StartPage;
 import utils.AndroidActions;
-
+import org.testng.*;
 public class MentorShipTest extends BaseTest {
 	
 
 	@Test(priority=1)
 	public void openMentorship() throws InterruptedException {
-		System.out.println("running openMentorship");
+		System.out.println("Running openMentorship");
 		HomeScreen homeScreen= new HomeScreen(driver);	
 		StartPage startPage = new StartPage(driver);
 		
 		startPage.login();
 		homeScreen.openMentorship();
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]")).size()>0);
 //		homeScreen.backToHomescreen();
-		Thread.sleep(2000);
-		driver.navigate().back();
+//		Thread.sleep(2000);
+//		driver.navigate().back();
 	}
 	
 	
@@ -33,14 +34,15 @@ public class MentorShipTest extends BaseTest {
 		System.out.println("Running openMentor");
 		HomeScreen homeScreen= new HomeScreen(driver);	
 		Mentorship mentorship = new Mentorship(driver);
-		homeScreen.openMentorship();
+//		homeScreen.openMentorship();
 		mentorship.openMentor();
 		//assert image and description shown
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]")).size()>0);
 //		homeScreen.backToHomescreen();
 		Thread.sleep(2000);
 		driver.navigate().back();
-		driver.navigate().back();
+//		driver.navigate().back();
 	}
 	
 	@Test(priority=3)
@@ -48,7 +50,7 @@ public class MentorShipTest extends BaseTest {
 		System.out.println("Running bookASlot");
 		HomeScreen homeScreen= new HomeScreen(driver);	
 		Mentorship mentorship = new Mentorship(driver);
-		homeScreen.openMentorship();
+//		homeScreen.openMentorship();
 		mentorship.bookASlot();
 		Thread.sleep(2000);
 		driver.navigate().back();

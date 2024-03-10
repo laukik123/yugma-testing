@@ -1,6 +1,6 @@
 package laukikdemo;
 
-
+import org.testng.*;
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
@@ -19,7 +19,7 @@ import pageObjects.android.StartPage;
 
 public class BizshortsTest extends BaseTest {
 
-	@Test(priority=1)
+	@Test(priority=1, groups= {"Smoke"})
 	public void openBizshorts() throws InterruptedException, MalformedURLException {
 		System.out.println("Running openBizshorts");
 		HomeScreen homeScreen= new HomeScreen(driver);	
@@ -31,37 +31,39 @@ public class BizshortsTest extends BaseTest {
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup")).size()>0);
 //		homeScreen.backToHomescreen();
 		Thread.sleep(2000);
-		driver.navigate().back();
+//		driver.navigate().back();
 	}
 		
-		@Test(priority=2)
+		@Test(priority=2, groups= {"Smoke"})
 		public void openNews() throws InterruptedException {
 			System.out.println("Running openNews");
 			HomeScreen homeScreen= new HomeScreen(driver);	
 			Bizshorts bizshorts=new Bizshorts(driver);
 			//open bizshorts
-			homeScreen.openBizshorts();
+//			homeScreen.openBizshorts();
 			bizshorts.openNews();
+			Thread.sleep(2000);
 			//news title, description is shown
 			AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView")).size()>4);
 //			homeScreen.backToHomescreen();
 			Thread.sleep(2000);
 			driver.navigate().back();
-			driver.navigate().back();
+//			driver.navigate().back();
 		}
 		
-		@Test(priority=3)
+		@Test(priority=3, groups= {"Smoke"})
 		public void bookmarkTest() throws InterruptedException {
-			System.out.println("runnning bookmarkTest");
+			System.out.println("Runnning bookmarkTest");
 			HomeScreen homeScreen= new HomeScreen(driver);	
 			Bizshorts bizshorts=new Bizshorts(driver);
-			homeScreen.openBizshorts();
+//			homeScreen.openBizshorts();
 			bizshorts.bookmark();
 //			String title1= driver.findElement(By.xpath("//android.widget.TextView[@index=1]")).getText();
 //			System.out.println(title1);
 			bizshorts.topBookmark();
 //			bizshorts.openBookmarked();
 //			System.out.println(driver.findElement(By.xpath("//android.widget.TextView[@text=\"No bookmarked news yet. Bookmark news by clicking on the bookmark\"]")).getText());
+			Thread.sleep(2000);
 			AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.TextView[@text=\"No bookmarked news yet. Bookmark news by clicking on the bookmark\"]")).size()<1);
 //			homeScreen.backToHomescreen();
 			Thread.sleep(2000);

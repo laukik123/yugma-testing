@@ -35,7 +35,8 @@ public class HomeScreen {
 	WebElement mentorshipButton;
 	
 	
-	@AndroidFindBy(xpath="//android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup/android.view.ViewGroup[4]")
+	
+	@AndroidFindBy(xpath="//android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup")
 	WebElement fourthIcon;
 	
 	
@@ -73,5 +74,9 @@ public class HomeScreen {
 			driver.navigate().back();
 		}
 	}
-
+	
+	public void swipeToCompetitions() {
+		AndroidActions actions = new AndroidActions(driver);
+		actions.swipeAction(fourthIcon, "left");
+	}
 }

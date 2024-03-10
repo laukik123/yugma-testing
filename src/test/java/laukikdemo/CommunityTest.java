@@ -1,5 +1,5 @@
 package laukikdemo;
-
+import org.testng.*;
 import org.openqa.selenium.By;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
@@ -10,7 +10,7 @@ import pageObjects.android.StartPage;
 
 public class CommunityTest extends BaseTest{
 	
-	@Test(priority=1)
+	@Test(priority=1, groups= {"Smoke"})
 	public void showPosts() throws InterruptedException {
 		System.out.println("Running showPosts");
 		HomeScreen homeScreen = new HomeScreen(driver);
@@ -18,33 +18,34 @@ public class CommunityTest extends BaseTest{
 		startPage.login();
 		homeScreen.openCommunity();
 		//assert posts are shown
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup")).size()>0);
 //		homeScreen.backToHomescreen();
 		Thread.sleep(2000);
-		driver.navigate().back();
+//		driver.navigate().back();
 	}
 	
 	
-	@Test(priority=2)
+	@Test(priority=2, groups= {"Smoke"})
 	public void comment() throws InterruptedException {
 		System.out.println("Running commentOnPost");
 		Community community = new Community(driver);
 		HomeScreen homeScreen = new HomeScreen(driver);
-		homeScreen.openCommunity();
+//		homeScreen.openCommunity();
 		community.commentOnPost();
 //		homeScreen.backToHomescreen();
 		Thread.sleep(2000);
 		driver.navigate().back();
 		driver.navigate().back();
-		driver.navigate().back();
+//		driver.navigate().back();
 	}
 	
-	@Test(priority=4)
+	@Test(priority=4, groups= {"Smoke"})
 	public void joinGroupAndPost() throws InterruptedException {
 		System.out.println("Running joinGroupAndPost");
 		Community community = new Community(driver);
 		HomeScreen homeScreen = new HomeScreen(driver);
-		homeScreen.openCommunity();
+//		homeScreen.openCommunity();
 		community.joinGroup();
 		community.post();
 //		homeScreen.backToHomescreen();
@@ -52,23 +53,25 @@ public class CommunityTest extends BaseTest{
 		driver.navigate().back();
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, groups= {"Smoke"})
 	public void showGroupsPosts() throws InterruptedException {
-		System.out.println("runnning showGroupsPosts");
+		System.out.println("Runnning showGroupsPosts");
 		Community community = new Community(driver);
 		HomeScreen homeScreen = new HomeScreen(driver);
-		homeScreen.openCommunity();
+//		homeScreen.openCommunity();
 		community.showGroups();
 		//assert groups are shown
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup")).size()>0);
 		
 		//check group posts shown
 		community.openGroup();
 		//assert group posts are shown
+		Thread.sleep(2000);
 		AssertJUnit.assertTrue(driver.findElements(By.xpath("//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup")).size()>0);		
 //		homeScreen.backToHomescreen();
 		Thread.sleep(2000);
 		driver.navigate().back();
-		driver.navigate().back();
+//		driver.navigate().back();
 	}
 }

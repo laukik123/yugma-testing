@@ -65,7 +65,7 @@ public class StartPage {
 		selectwhileUsingTheAppPermission();
 		selectwhileUsingTheAppPermission();
 		allowButtonClick();
-//		startPage.updateIgnore();
+//		updateIgnore();
 		continueWithEmail();
 		emailTextbox.sendKeys("laukik@vmentor.ai");
 		passwordTextbox.sendKeys("laukikvmentor123");
